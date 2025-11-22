@@ -72,11 +72,6 @@ const fetchAnswers = async () => {
 
 const proxyRequest = async context => {
     
-    if (context.request.url){
-        return new Response(context.request.url)
-    }
-    
-    
     const promises = []
     promises.push(fetchCloudflareDns(context))
     promises.push(fetchCloudflareIpv4())

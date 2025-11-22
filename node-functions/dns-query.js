@@ -7,6 +7,14 @@ const dohHost = dohUrl.host
 
 const cname = 'cf.100172.xyz'
 
+const getParamStr = url => {
+    const index = url.indexOf('?')
+    if (index >= 0) {
+        return url.substring(index)
+    }
+    return ''
+}
+
 const fetchCloudflareDns = async context => {
     const request = context.request
     const proxyHeaders = new Headers(request.headers)
@@ -17,7 +25,9 @@ const fetchCloudflareDns = async context => {
     proxyHeaders.delete('x-forwarded-port')
     proxyHeaders.delete('x-forwarded-for')
     
-    const response = await fetch(dohOrigin + request.url, {
+    const paramStr = getParamStr(request.url)
+    
+    const response = await fetch(dohOrigin + paramStr, {
         method: request.method,
         headers: proxyHeaders,
         body: request.body

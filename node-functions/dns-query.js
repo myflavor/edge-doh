@@ -27,7 +27,7 @@ const fetchCloudflareDns = async context => {
     
     const paramStr = getParamStr(request.url)
     
-    const response = await fetch(dohOrigin + paramStr, {
+    const response = await fetch(dohUrl + paramStr, {
         method: request.method,
         headers: proxyHeaders,
         body: request.body

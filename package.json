@@ -1,0 +1,8 @@
+{
+  "name": "edge-doh",
+  "type": "module",
+  "dependencies": {
+    "dns-packet": "^5.6.1",
+    "ipaddr.js": "^2.2.0"
+  }
+}

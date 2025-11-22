@@ -17,7 +17,7 @@ const fetchCloudflareDns = async context => {
     proxyHeaders.delete('x-forwarded-port')
     proxyHeaders.delete('x-forwarded-for')
     
-    const response = await fetch(dohOrigin + request.url, {
+    const response = await fetch( request.url.replace('doh.100172.xyz',dohHost), {
         method: request.method,
         headers: proxyHeaders,
         body: request.body

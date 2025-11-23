@@ -120,6 +120,7 @@ const proxyRequest = async context => {
                 for (let cidr of ipv4Result.cidrList) {
                     if (addr.match(ipaddr.parseCIDR(cidr))){
                         cloudflare = true
+                        break
                     }
                 }
                 

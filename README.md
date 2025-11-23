@@ -1,0 +1,1 @@
+Edge Pages 实现DOH 代理，对解析结果为cloudflare的ipv4使用指定优选cname的解析结果替代

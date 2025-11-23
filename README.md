@@ -1,1 +1,5 @@
 Edge Pages 实现DOH 代理，对解析结果为cloudflare的ipv4使用指定优选cname的解析结果替代
+
+目前解析时，会同时请求获取cloudflare的ip段，且如果是cloudflare的ip段还会在进行一次cname的解析结果查询，速度会降低
+
+如果有需求可以自行修改缓存到kv中，将cname的解析结果使用cache方法缓存到节点中，加快解析速度
